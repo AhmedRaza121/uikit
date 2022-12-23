@@ -1,0 +1,75 @@
+$primary: RGB( 30, 133, 109);
+
+.swf-tabs-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #a5a5a5;
+  &.flex-start{
+    justify-content: flex-start;
+  };
+  &.flex-end{
+    justify-content: flex-end;
+  };
+  &.center{
+    justify-content: center;
+  };
+  &.stretch{
+    justify-content: space-between;
+    .swf-tab{
+      width: 100%
+    }
+  }
+}
+.flex-start, .flex-end, .center{
+  .swf-tab{
+    width: auto
+  }
+}
+.swf-tab {
+  transition: all .1s ease-in-out;
+  border-bottom: none;
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+
+  .info-icon-container{
+    display: flex;
+    margin: auto 0;
+  }
+
+  .info-icon{
+    color: #2196F3;
+  }
+
+  &:hover{
+    border-bottom-color: #a5a5a5;
+  }
+  &.active {
+    border-bottom-color: $primary;
+    &.invalid{
+      border-bottom-color: red;
+    }
+
+  }
+  &:hover, &.active{
+    color: $primary
+  }
+  &.invalid{
+    color: red;
+    .info-icon{
+      color: red;
+    }
+  }
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+}
+
+.info-content{
+  color: black;
+}

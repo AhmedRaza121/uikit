@@ -1,0 +1,21 @@
+.filter-saver {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: .5em;
+
+    .popover-content {
+        min-width: fit-content;
+        .popover-content-keeper {
+            min-width: fit-content;
+        }
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 1rem;
+    }
+
+}

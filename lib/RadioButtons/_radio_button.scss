@@ -1,0 +1,101 @@
+.radio-buttons-container {
+  --base-radio-button-color: black;
+
+
+  .invalid {
+    --base-radio-button-color: red;
+  }
+
+  .radio-buttons-required {
+    color: var(--base-radio-button-color);
+    font-size: 1.5rem;
+    overflow: hidden;
+    line-height: 1rem;
+    padding-top: 5px;
+  }
+
+  .radio-buttons-label {
+    margin-right: 4px;
+  }
+
+
+  .radio-buttons-header {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    color: var(--base-radio-button-color);
+  }
+
+  .radio-option-container {
+    --radio-option-cursor: pointer;
+    --radio-option-hover-backgroung: rgb(206, 233, 242);
+    --radio-option-hover-border: blue;
+
+
+    display: flex;
+
+    &.invalid {
+      --radio-option-hover-backgroung: rgb(245, 196, 196);
+      --radio-option-hover-border: red;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      --radio-option-cursor: default;
+      --radio-option-hover-backgroung: transparent;
+      --radio-option-hover-border: var(--base-radio-button-color);
+    }
+
+    &.readonly {
+      --radio-option-cursor: default;
+      --radio-option-hover-backgroung: transparent;
+      --radio-option-hover-border: var(--base-radio-button-color);
+
+    }
+
+    &.horizontal {
+      display: inline-flex;
+      margin: 0 1rem 0 0;
+    }
+
+    cursor: var(--radio-option-cursor);
+  }
+
+  .radio-option-label {
+    cursor: var(--radio-option-cursor);
+    margin: auto 0;
+  }
+
+  .radio-option {
+    cursor: var(--radio-option-cursor);
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--base-radio-button-color);
+    border-radius: 50%;
+    appearance: none;
+    outline: none;
+    margin-block: 0.25rem;
+    margin-inline: 0 0.5rem;
+
+  }
+
+  .radio-option.checked::after {
+    content: "";
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  .radio-option:hover {
+    background: var(--radio-option-hover-backgroung);
+    border-color: var(--radio-option-hover-border);
+  }
+}

@@ -1,0 +1,37 @@
+.swf-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  margin: 1rem 1rem 1rem 3px;
+
+  &.vertical {
+    margin: 0;
+  }
+
+  &.--sm{
+    max-width: 450px;
+    min-width: 450px;
+  }
+
+  &.--s {
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  &.--m {
+    max-width: 600px;
+    min-width: 600px;
+  }
+
+  &.--l {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}

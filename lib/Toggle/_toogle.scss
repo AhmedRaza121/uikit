@@ -1,0 +1,112 @@
+//SIZE
+
+.switch{
+  --width: 3rem;
+  --height: 25px;
+  --circle-border-size: 1px;
+  --border-size: 1px;
+  --circle-gap: 1px;
+
+  --active-border-color: rgb(23, 100, 82);
+  --active-background-color: rgb(30, 133, 109);
+
+  --alert-border-color: rgb(172, 180, 181);
+  --alert-background-color: rgb(228, 230, 231);
+
+  --circle-border-color: rgb(172, 180, 181);
+  --circle-background: white;
+  --hover-circle-background: rgb(228, 230, 231);
+}
+
+.toggle-sm{
+  --width: 2rem;
+  --height: 17px;
+}
+
+.toggle-md{
+  --width: 3rem;
+  --height: 25px;
+}
+
+.switch{
+ // --circle-size: calc(var(--height) - 2*( var(--border-size) + var(--circle-gap) + var(--circle-border-size)));
+  --circle-size: calc(var(--height) - 2*( var(--border-size) + var(--circle-gap)));
+  --real-width: calc(var(--width) - 2*var(--border-size));
+
+//  --circle-transform: calc( var(--real-width) - var(--circle-size) - 2 *( var(--circle-gap) + var(--circle-border-size)));
+  --circle-transform: calc( var(--real-width) - var(--circle-size) - 2 *( var(--circle-gap)));
+
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: var(--width, 3rem);
+  height: var(--height, 25px);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  background-color: var(--alert-background-color);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: transform .1s;
+  transition: transform .1s;
+  border: var(--border-size) solid var(--alert-border-color);
+  border-radius: 34px;
+}
+
+//button
+.slider:before {
+  border: var(--circle-border-size) solid var(--circle-border-color);
+  position: absolute;
+  content: "";
+  height: var(--circle-size);
+  width: var(--circle-size);
+  left: var(--circle-gap, 1px);
+  top: var(--circle-gap, 1px);
+  background-color: var(--circle-background);
+  -webkit-transition: transform 0.1s linear 0s;
+  transition: transform 0.1s linear 0s;
+  border-radius: 34px;
+}
+
+.slider:hover:before{
+  background-color: var(--hover-circle-background);
+}
+
+input:checked + .slider {
+  border-color: var(--active-border-color);
+  background-color: var(--active-background-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(var(--circle-transform));
+  -ms-transform: translateX(var(--circle-transform));
+  transform: translateX(var(--circle-transform));
+}
+
+.disabled {
+  opacity: 0.5;
+
+  .slider{
+    cursor: default;
+  }
+
+  .slider:hover:before{
+    background-color: white;
+  }
+}
+

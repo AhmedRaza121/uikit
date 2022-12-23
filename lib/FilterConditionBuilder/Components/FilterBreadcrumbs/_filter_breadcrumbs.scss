@@ -1,0 +1,35 @@
+@import "./FilterBreadCrumbItem/filter_breadcrumb_item";
+
+.breadcrumbs-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .item-container {
+
+        .bread-arrow {
+            margin: 0 5px;
+            cursor: pointer;
+
+            &:hover+span {
+                text-decoration: line-through;
+            }
+        }
+
+        .label {
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: line-through;
+            }
+        }
+
+        &:first-child {
+            .label {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

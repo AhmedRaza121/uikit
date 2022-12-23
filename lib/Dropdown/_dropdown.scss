@@ -1,0 +1,213 @@
+.swf-dropdown-main-container {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  display: inline-block;
+
+  &.dropdown-container {
+    width: 13rem;
+
+    &.--autoWidth {
+      width: 100%;
+    }
+  }
+
+  --dropdown-padding: 0.5rem;
+
+  .dropdown-label {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    min-height: 1rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &.placeholder {
+      color: #888
+    }
+  }
+
+  .dropdown-items-container {
+    // max-height: 15rem;
+    overflow: auto;
+  }
+
+  .dropdown-button {
+    position: relative;
+    width: inherit;
+    height: 2rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: var(--dropdown-padding) calc(var(--dropdown-padding) + 12px) var(--dropdown-padding) var(--dropdown-padding);
+    border-radius: 0.5rem;
+    border: none;
+    background: rgb(228, 230, 231);
+    color: black;
+
+    &.hideCaret {
+      padding: var(--dropdown-padding) 0 var(--dropdown-padding) var(--dropdown-padding);
+    }
+
+    &.opened {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: rgba(16, 16, 16, 0.3);
+    }
+
+    &.invalid {
+      border: red solid 1px;
+    }
+
+
+    .dropdown-caret {
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: var(--dropdown-padding);
+    }
+  }
+
+  .swf-dropdown-item {
+    display: grid;
+    max-width: 100%;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    grid-template-columns: max-content 1fr max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 1rem;
+
+    --main-color: black;
+    --main-disabled-color: rgba(16, 16, 16, 0.5);
+    --main-selected-color: rgb(30, 133, 109);
+    --detail-color: #555;
+
+    --current-color: var(--main-color);
+    --current-details-color: var(--detail-color);
+
+
+    &.--no-icon {
+      grid-template-columns: 1fr max-content;
+    }
+
+    .text-items {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin: auto 0;
+      cursor: pointer;
+    }
+
+    .item-element {
+      border: none;
+      text-align: center;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      label {
+        cursor: default;
+      }
+
+      --current-color: var(--main-disabled-color);
+      --current-details-color: var(--main-disabled-color);
+    }
+
+    &.selected {
+      cursor: pointer !important;
+      color: rgb(30, 133, 109);
+      --current-color: var(--main-selected-color);
+      --current-details-color: var(--main-selected-color);
+
+    }
+
+    color: var(--current-color);
+
+    .sublabel {
+      color: var(--current-details-color);
+      font-size: 0.8rem;
+    }
+
+    .item-start {
+      margin: auto 0.5rem auto 0;
+    }
+
+    .item-end {
+      right: 0;
+      margin: auto 0 auto 0.5rem;
+      color: var(--current-details-color);
+      font-size: 0.8rem;
+    }
+
+  }
+
+  .swf-dropdown-item:hover {
+    --current-color: var(--main-selected-color);
+    --current-details-color: var(--main-selected-color);
+    background: rgb(227, 227, 227);
+
+    &.disabled {
+      --current-color: var(--main-disabled-color);
+      --current-details-color: var(--main-disabled-color);
+      background: transparent;
+    }
+
+    color: var(--current-color);
+
+    .sublabel {
+      color: var(--current-details-color);
+    }
+
+    .item-end {
+      color: var(--current-details-color);
+    }
+  }
+
+  .dropdown-button:focus {
+    outline: none;
+  }
+
+  //SCROLL STYLES
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 1px 1px 1px 0;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a5a5a5;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+}
+

@@ -1,0 +1,93 @@
+@import "./Components/FilterTemplates/filter_templates";
+@import "./Components/FilterConditionItem/filter_condition_item";
+@import "./Components/FilterBreadcrumbs/filter_breadcrumbs";
+@import "./Components/ExpandDropdown/dropdown";
+@import "./Components/FilterSaver/filter_saver";
+
+.collapsed-filter-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    .breadcrumbs {
+        margin-left: 20px;
+    }
+    .swf-button {
+        margin: 0;
+    }
+}
+
+.swf-filter-container {
+    display: none;
+    &.--is-collapsed {
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        border-top: 1px solid rgb(190, 193, 198);
+        border-bottom: 1px solid rgb(190, 193, 198);
+        display: block;
+        .filter-header {
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgb(172, 180, 181);
+            .actions {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .btn {
+                        margin-right: 3px;
+                        .swf-button {
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .filter-body {
+
+            .conditions-container {
+                position: relative;
+                z-index: 10;
+                
+                .global-condition {
+                    margin-bottom: 10px;
+                    padding-top: 10px;
+    
+                    .condition-container {
+                        margin-bottom: 10px;
+    
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+    
+                    .failed {
+                        padding: 5px;
+                        box-sizing: border-box;
+                        border-bottom: solid 1px red;
+                    }
+                }
+
+            }
+            .new-criteria {
+                position: relative;
+                margin-top: 20px;
+                padding-top: 15px;
+                border-top: 1px solid #acb4b5;
+    
+                .title {
+                    position: absolute;
+                    top: -12px;
+                    left: 30px;
+                    padding: 0 10px;
+                    font-size: 16px;
+                    background: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+}

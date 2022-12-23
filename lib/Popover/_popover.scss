@@ -1,0 +1,102 @@
+.popover-target{
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.popover-content {
+  --popover-background: white;
+  --popover-border-radius: 1rem;
+  --popover-border: none;
+  --popover-shadow: 0 3px 6px -4px rgba(0, 0, 0 , 0.12), 0 6px 16px 0 rgba(0, 0, 0 , 0.08), 0 9px 28px 8px rgba(0, 0, 0 , 0.05);
+
+  &.noRoundBorder{
+    --popover-border-radius: 0;
+  }
+
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px;
+
+  background: var(--popover-background);
+  z-index: 800;
+  border-radius: var(--popover-border-radius);
+  box-shadow: var(--popover-shadow);
+  border: var(--popover-border);
+
+  --arrow-size: 9px;
+
+  --popover-arrow-top: 0px;
+  --popover-arrow-left: 0px;
+
+  --arrow-left-size: var(--arrow-size);
+  --arrow-right-size: var(--arrow-size);
+  --arrow-bottom-size: var(--arrow-size);
+  --arrow-top-size: var(--arrow-size);
+
+  --arrow-top-color: transparent;
+  --arrow-bottom-color: transparent;
+  --arrow-left-color: transparent;
+  --arrow-right-color: transparent;
+
+  //SCROLL STYLES
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 4px 1px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.popover-content-keeper{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+
+//arrow
+.popover-content::after{
+  content: "";
+  z-index: -1;
+  position: absolute;
+
+  top: var(--popover-arrow-top);
+  left: var(--popover-arrow-left);
+
+  border-top-width: var(--arrow-top-size);
+  border-bottom-width: var(--arrow-bottom-size);
+  border-left-width: var(--arrow-left-size);
+  border-right-width: var(--arrow-right-size);
+
+  border-top-color: var(--arrow-top-color);
+  border-bottom-color: var(--arrow-bottom-color);
+  border-left-color: var(--arrow-left-color);
+  border-right-color: var(--arrow-right-color);
+
+  border-style: solid;
+
+
+}
+

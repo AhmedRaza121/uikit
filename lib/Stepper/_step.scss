@@ -1,0 +1,202 @@
+.step {
+  &-container {
+    --box-shadow: 0 0 0 2.5px var(--circle-color);
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+
+      .step-circle {
+        box-shadow: var(--box-shadow);
+
+        &.--partial {
+          //border-width: 0;
+        }
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-label {
+    //position: absolute;
+    //bottom: -30px;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    padding-top: 8px;
+    display: flex;
+
+    flex-direction: column;
+    color: var(--label-color);
+    -webkit-user-select: none;
+  }
+
+  &-sublabel {
+    font-size: 0.75rem;
+    font-weight: lighter;
+  }
+
+  &-line {
+    flex: 1 1 0;
+    width: 100%;
+    background-color: var(--link-color);
+    opacity: 0.2;
+    border-radius: 3px;
+    height: 1px;
+    transition: opacity 300ms;
+  }
+
+  &-circle {
+    background-color: transparent;
+    border-radius: 50%;
+
+    width: var(--circle-size, 2rem);
+    height: var(--circle-size, 2rem);
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 200ms ease, box-shadow 300ms ease, opacity 300ms ease, border-width 100ms;
+
+    &.--done {
+      background-color: var(--circle-color);
+      padding: 2px;
+    }
+  }
+
+  &-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.--selected {
+  .step-line {
+    &.--before {
+      opacity: 1;
+    }
+  }
+
+  .step-circle {
+    opacity: 1;
+    box-shadow: var(--box-shadow);
+
+    &.--partial {
+      box-shadow: none;
+    }
+  }
+
+  .step-circle:not(.--none):not(.--partial) {
+    background-color: var(--circle-color);
+  }
+
+  .step-label {
+    //instead of *bold* for not to resize the element
+    text-shadow: -0.06ex 0 black, 0.06ex 0 black;
+  }
+
+  .step-sublabel {
+    text-shadow: -0.06ex 0 black, 0.06ex 0 black;
+  }
+}
+
+.--before-selected {
+  .step-line {
+    &.--before, &.--after {
+      opacity: 1;
+    }
+  }
+
+  .step-circle {
+    opacity: 1;
+  }
+
+  .step-circle:not(.--none):not(.--partial) {
+    background-color: var(--circle-color);
+  }
+}
+
+.--vertical {
+ .step {
+   &-container {
+     flex-direction: row;
+     justify-content: center;
+     height: 120px;
+     position: relative;
+   }
+
+   &-body {
+     height: 100%;
+     width: max-content;
+     max-width: 100px;
+     flex-direction: column;
+   }
+
+   &-line {
+     height: 100%;
+     width: 1px;
+   }
+
+   &-label {
+     text-align: left;
+     position: absolute;
+     left: calc(50% + var(--circle-size));
+   }
+ }
+}
+
+.steps-item.--disabled {
+  .step-circle {
+    opacity: 0.3;
+  }
+
+  .step-container:hover {
+    cursor: default;
+
+    .step-circle {
+      box-shadow: none;
+    }
+  }
+}
+
+circle {
+  fill: transparent;
+  stroke: var(--circle-color);
+  stroke-width: 2;
+  transition: stroke 300ms ease, stroke-width 300ms ease;
+
+  &.--done {
+    fill: var(--circle-color);
+    stroke: white;
+  }
+
+  &.--partial {
+    stroke-dasharray: 5, 2;
+  }
+}
+
+.steps-item.--selected circle {
+  &.--done{
+    stroke: white;
+  }
+}

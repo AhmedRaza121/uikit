@@ -1,0 +1,68 @@
+.accordion-container{
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #e3e3e3 ;
+
+}
+
+.accordion-item{
+  width: 100%;
+  border-bottom: 1px solid #e3e3e3 ;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+  &.first{
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  &.last{
+    border-radius: 0 0 0.5rem 0.5rem;
+    border: none;
+  }
+
+  .accordion-item-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ededed;
+    cursor: pointer;
+    border-radius: inherit;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+    label{
+      cursor: pointer;
+    }
+
+    .accordion-header-content{
+      width: calc(100% - 2rem);
+      padding: 0 0.5rem;
+
+      &.opened{
+        color: rgb(30, 133, 109);
+      }
+    }
+
+    .trigger-icon{
+      width: 2rem;
+    }
+
+    .left{
+      left: 0;
+    }
+    .right{
+      right: 0;
+    }
+
+  }
+
+  .accordion-content{
+    padding: 0.5rem;
+  }
+
+
+  .accordion-item-header:hover{
+    background: #f1f1f1;
+    color: rgb(30, 133, 109);
+  }
+
+}

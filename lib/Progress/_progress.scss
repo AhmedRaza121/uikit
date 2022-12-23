@@ -1,0 +1,51 @@
+.swf-progress-container{
+  --active-color: #2196F3;
+  --done-color: #4CAF50;
+  --exception-color: #f44336;
+
+  --progress-color: var(--active-color);
+
+  &.done{
+    --progress-color: var(--done-color);
+  }
+
+  &.exception{
+    --progress-color: var(--exception-color);
+  }
+
+  color: var(--progress-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .progress-bar{
+    width: 100%;
+    height: 0.5rem;
+    display: inline-block;
+    border-radius: 1rem;
+    background: #e9ecef;
+    justify-content: center;
+    align-items: center;
+
+    .progress-bar-fill{
+      height: inherit;
+      background: var(--progress-color);
+      border-radius: inherit;
+    }
+  }
+
+  .progress-info-container {
+    width: 2rem;
+    margin: 0 0.25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    .progress-info {
+      color: black;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+  }
+}

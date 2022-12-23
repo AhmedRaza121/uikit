@@ -1,0 +1,136 @@
+.pill {
+  color: rgba(0, 0, 0, 0.87);
+  border: none;
+  cursor: default;
+  height: 32px;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  box-sizing: border-box;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  align-items: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  white-space: nowrap;
+  border-radius: 16px;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+
+  &.--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.--clickable {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent
+  }
+
+  &.--sm {
+    height: 24px;
+  }
+
+  &.--md {
+    height: 32px;
+  }
+
+  &.--xl {
+    height: 40px;
+  }
+
+  &.--default {
+    background-color: #e0e0e0;
+  }
+
+  &.--primary {
+    color: #fff;
+    background-color: #1976d2;
+  }
+
+  &.--negative {
+    color: #fff;
+    background-color: rgb(220, 0, 78);
+  }
+
+  &.--outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    background-color: transparent;
+
+    &.--primary {
+      color: rgb(25,118, 210);
+      border-color: rgb(25,118, 210);
+    }
+    &.--negative {
+      color: rgb(220, 0, 78);
+      border-color: rgb(220, 0, 78);
+    }
+  }
+
+  &:hover {
+    background-color: rgb(206, 206, 206);
+
+    &.--primary,
+    &.--negative {
+      color: #fff;
+    }
+
+    &.--primary {
+      background-color: #1864ae;
+    }
+
+    &.--negative {
+      background-color: rgb(157, 0, 51);
+    }
+  }
+
+  .pill-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+    &.--delete {
+      padding: 2px;
+      cursor: pointer;
+      background: #cecece;
+      border-radius: 50%;
+      margin-right: 5px;
+      &:hover {
+        background: #e0e0e0;
+        transform: scale(1.1);
+      }
+    }
+
+    .--primary &.--delete {
+      background: rgb(255, 255 ,255);
+      color: rgb(25,118, 210);
+    }
+
+    .--negative &.--delete {
+      background: rgb(255, 255 ,255);
+      color: rgb(220, 0, 78);
+    }
+  }
+
+  .pill-label {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-overflow: ellipsis;
+
+    &.--sm,
+    &.--md {
+      padding-left: 12px;
+      padding-right: 12px;
+      font-size: .8rem;
+    }
+
+    &.--lg {
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 1rem;
+    }
+  }
+}

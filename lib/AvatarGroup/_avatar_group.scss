@@ -1,0 +1,87 @@
+
+.swf-avatar-container {
+  --height-s: 1.7rem;
+  --height-m: 2.2rem;
+  --height-l: 2.7rem;
+  --color: #fff;
+  --alert-border-color: #fff;
+
+  .avatar-multiple {
+    .additional-members {
+      z-index: 1;
+    }
+
+    &.add-new-member {
+      transition: all .08s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: #1a4aa4;
+      }
+    }
+
+    & > p {
+      box-shadow: 0 0 0 2pt var(--alert-border-color);
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 3px;
+  justify-content: flex-end;
+
+
+  .additional-avatar {
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -2px;
+
+  }
+
+  &.--xs {
+    height: var(--height-s);
+
+    .additional-avatar {
+      height: var(--height-s);
+      width: var(--height-s);
+      min-width: var(--height-s);
+    }
+  }
+
+  &.--md {
+    height: var(--height-m);
+
+    .additional-avatar {
+      height: var(--height-m);
+      width: var(--height-m);
+      min-width: var(--height-s);
+    }
+  }
+
+  &.--lg {
+    height: var(--height-l);
+
+    .additional-avatar {
+      height: var(--height-l);
+      width: var(--height-l);
+      min-width: var(--height-s);
+    }
+  }
+
+  .selected-avatar {
+    z-index: 2;
+  }
+
+  .swf-avatar {
+    --color-for-border: var(--alert-border-color);
+  }
+}

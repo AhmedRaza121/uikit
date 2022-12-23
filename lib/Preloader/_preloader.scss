@@ -1,0 +1,61 @@
+.swf-preloader {
+  display: flex;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mock-container {
+    margin: 5px;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    position: relative;
+
+    &.gray {
+      background-color: rgb(231, 228, 228);
+    }
+
+    .mock-row {
+      background-color: #c7c6c680;
+      border-radius: 1rem;
+      margin: 4px;
+
+      &.round {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .light-container {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: 100%;
+    left: 0;
+
+    .light {
+      position: relative;
+      height: 110%;
+      width: 100%;
+      animation: translate 1.5s infinite linear;
+      filter: blur(4rem);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 3rem;
+        height: 100%;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 100px 115px 210px -135px rgba(255, 255, 255, 1);
+      }
+
+      @keyframes translate {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+}

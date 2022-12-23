@@ -1,0 +1,23 @@
+.item-container {
+
+    .bread-arrow {
+        margin: 0 5px;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:hover+span {
+            text-decoration: line-through;
+        }
+    }
+
+    .label {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

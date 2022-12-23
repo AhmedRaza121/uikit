@@ -1,0 +1,236 @@
+.range-calendar-container{
+  width: fit-content;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.range-calendar{
+  display: inline-block;
+  margin: 0 .5rem 0 0;
+
+  &.--next{
+    display: inline;
+    margin: 0 0 0 0.5rem;
+  }
+}
+
+.ui-kit__calendar-container{
+  width: 14rem;
+  border-collapse: collapse;
+
+  .calendar-header{
+
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    .calendar-header-label{
+      margin: auto 0.5rem;
+      cursor: default;
+      font: 1rem Arial;
+    }
+
+    .header-part{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0 0;
+
+      &.--end{
+        margin: 0 0 auto auto;
+      }
+    }
+
+    .calendar-arrow{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+      margin: 0 auto 0 0;
+
+      &.next{
+        margin: 0 0 auto auto;
+      }
+    }
+
+    .calendar-arrow:hover{
+      background: #ededed;
+      color:  rgb(30, 133, 109);
+    }
+
+  }
+
+
+  .calendar-view{
+    display: grid;
+    grid-template-columns: repeat(7, max-content);
+    grid-template-rows: repeat(6, max-content);
+    justify-content: center;
+    border-collapse: collapse;
+    box-sizing: border-box;
+  }
+
+}
+
+.calendar-day-container{
+  border-collapse: collapse;
+  padding: 0.125rem;
+  position: relative;
+  cursor: pointer;
+
+  &.--cursor-default{
+    cursor: default;
+  }
+
+  &.--disabled{
+    background: #e4e6e7;
+    color: rgba(0,0,0, 0.5);
+    cursor: default;
+
+    &.--start-disabled{
+      border-radius: 50% 0 0;
+    }
+
+    &.--end-disabled{
+      border-radius: 0 0 50% 0;
+    }
+  }
+
+  .border-container{
+    position: absolute;
+    width: calc(100% - 2px);
+    top:0;
+    left:0;
+    height: calc(100% - 2px);
+    border: 1px dashed transparent;
+    z-index: 10;
+
+    &.--hovered {
+      &.--first-in-period {
+        border-radius: 50% 0 0 0;
+
+        &.--border-bottom {
+          border-radius: 50% 0 0 50%;
+        }
+      }
+
+      &.--last-in-period {
+        border-radius: 0 0 50% 0;
+
+        &.--border-top {
+          border-radius: 0 50% 50% 0;
+        }
+      }
+
+      &.--one-in-period {
+        border-radius: 50%;
+      }
+
+      &.--border-top{
+        border-top: 1px dashed rgb(30, 133, 109);
+      }
+      &.--border-bottom{
+        border-bottom: 1px dashed rgb(30, 133, 109);
+      }
+      &.--border-right{
+        border-right: 1px dashed rgb(30, 133, 109);
+      }
+      &.--border-left{
+        border-left: 1px dashed rgb(30, 133, 109);
+      }
+    }
+
+    &.--disabled{
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  &.--in-selected-period{
+    background: rgba( 30, 133, 109, 0.15);
+
+    &.--selected{
+      border-radius: 0 0 50% 0;
+
+      &.--selected-border-right{
+        &.--selected-border-bottom{
+          border-radius: 0 0 50% 0;
+
+          &.--selected-border-top{
+            border-radius: 0 50% 50% 0;
+          }
+        }
+      }
+
+      &.--selected-border-left{
+        &.--selected-border-top{
+          border-radius: 50% 0 0 0;
+
+          &.--selected-border-bottom{
+            border-radius: 50% 0 0 50%;
+
+            &.--selected-border-right{
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.calendar-day-container:hover{
+  .--can-hover.day-element{
+    background: #ededed;
+    color:  rgb(30, 133, 109);
+
+    &.--in-selected-period{
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    &.selected{
+      background: rgb(30, 133, 109);
+      color: white;
+    }
+  }
+}
+
+.calendar-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50%;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  line-height: 1.5;
+
+  &.active{
+    &.selected{
+      background: rgb(30, 133, 109);
+      color: white;
+    }
+  }
+
+  &.notActive{
+    color: #a5a5a5;
+  }
+
+  &.week-day{
+    color: #888888;
+    cursor: default;
+  }
+
+  &.now-date{
+    font-weight: bold;
+  }
+
+}

@@ -1,0 +1,44 @@
+//@import '@servicenow/sass-kit/host';
+
+.swf-dropdown-container {
+    width: 100%
+}
+
+.condition-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .condition-operator {
+        margin: 0 5px 0 0;
+    }
+
+    .dropdown-container {
+        width: 100%;
+        margin-right: 5px;
+        .swf-dropdown-main-container {
+            width: 100%;
+            .dropdown-button {
+                border: 1px solid #e4e6e7;
+                background: #fff;
+            }
+        }
+    }
+
+    .btn-container {
+        //margin: 0 3px 0 0;
+        margin-right: 3px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.btn-run {
+    margin: 10px 0 0 5px;
+}
+
+.limited-area {
+    max-height: 5.5em;
+}

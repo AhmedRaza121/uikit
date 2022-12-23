@@ -1,0 +1,150 @@
+.swf-avatar {
+  --color-for-border: #fff;
+  --size-s: 1.5rem;
+  --size-m: 2rem;
+  --size-l: 2.5rem;
+
+  border-radius: 50%;
+  box-shadow: 0 0 0 2pt var(--color-for-border);
+  font-size: .7rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: max-width 0.3s linear, width 0.3s linear, border-radius 1s linear;
+  -webkit-transition: max-width 0.3s linear, width 0.3s linear, border-radius 1s linear;
+  overflow: hidden;
+
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+  min-width: var(--final-size);
+  width: 100%;
+  height: var(--final-size);
+  max-width: var(--final-size);
+
+  &.--default {
+    background-color: #e0e0e0;
+  }
+
+  &.--primary {
+    color: #fff;
+    background-color: #1976d2;
+  }
+
+  &.--negative {
+    color: #fff;
+    background-color: rgb(220, 0, 78);
+  }
+
+  &.--clickable:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &.--xs {
+    --final-size: var(--size-s);
+    font-size: 0.85rem;
+
+    &.--selected {
+      border-radius: 1rem;
+      font-size: 0.6rem;
+      max-width: 10rem !important;
+    }
+  }
+
+  &.--md {
+    --final-size: var(--size-m);
+  }
+
+  &.--lg {
+    --final-size: var(--size-l);
+  }
+
+  &.--selected {
+    z-index: 2;
+    transition: max-width 0.3s linear, width 0.3s linear;
+    -webkit-transition: max-width 0.3s linear, width 0.3s linear;
+    padding: 3px 3px 3px 0;
+    width: fit-content;
+    border-radius: 1.3rem;
+    font-size: 0.7rem;
+    max-width: 15rem;
+  }
+
+  .photo-container {
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: inherit;
+    width: auto;
+    height: inherit;
+
+    .member-photo {
+      height: 1.5rem;
+    }
+  }
+
+  .member-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: inherit;
+    width: auto;
+    height: inherit;
+    color: #000;
+    background: lightgray;
+    border-radius: 50%;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    p.initials {
+      color: black;
+      margin: 0;
+    }
+  }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10px 0 5px;
+    padding: 5px 0;
+    overflow: hidden;
+    width: fit-content;
+    visibility: hidden;
+
+    .name,
+    .title {
+
+      margin: 0;
+      transform: translateX(-120%);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      animation: 0.2s ease-in 0s 1 normal forwards position;
+      @keyframes position {
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  .remove {
+    transform: scale(1);
+    transition: all .08s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      color: #1a4aa4;
+    }
+  }
+
+  .visible {
+    visibility: visible;
+  }
+}
+

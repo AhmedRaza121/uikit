@@ -1,0 +1,48 @@
+.range-picker-container {
+
+  .range-picker {
+    display: flex;
+    width: fit-content;
+    padding: 0 0.5rem 0 1rem;
+
+
+    .date-input-control {
+      display: flex;
+      height: auto;
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: auto 0;
+      color: #495057;
+      border: none;
+      width: inherit;
+
+      &.--readonly {
+        cursor: default;
+        background: rgb(228, 230, 231);
+      }
+
+      &.--focus {
+        outline: none;
+        border-bottom: 1px solid #007bff;
+        box-shadow: 0 1px #007bff;
+
+        &.--invalid {
+          border-bottom-color: red;
+          box-shadow: 0 1px red;
+        }
+      }
+    }
+
+    .date-input-control:focus {
+      outline: none;
+    }
+
+
+    .range-picker-element {
+      display: flex;
+      align-self: center;
+      padding: 0 0.5rem;
+    }
+  }
+}

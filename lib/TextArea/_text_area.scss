@@ -1,0 +1,93 @@
+.form-group {
+    position: relative;
+
+
+    label {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #5a6169;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: translate(10px, 5px) scale(1);
+        background: #fff;
+        padding: 4px;
+        transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    }
+
+    label.--moved {
+        transform: translate(14px, -14px) scale(0.75);
+    }
+
+    label.--focused {
+        color: #007bff;
+    }
+
+    .input-group {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+    }
+
+
+    .input-group > .form-control {
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+        min-width: 0;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #becad6;
+        font-weight: 300;
+        will-change: border-color, box-shadow;
+        border-radius: 0.375rem;
+        box-shadow: none;
+        transition: box-shadow 250ms cubic-bezier(0.27, 0.01, 0.38, 0.06), border 250ms cubic-bezier(0.27, 0.01, 0.38, 0.06);
+        resize: none !important;
+    }
+
+    .form-control.resize {
+        resize: both !important;
+    }
+
+    .form-control:focus {
+        .active {
+            color: #495057;
+            background-color: #fff;
+            border-color: #007bff;
+            box-shadow: 0 0.313rem 0.719rem rgba(0, 123, 255, 0.1), 0 0.156rem 0.125rem rgba(0, 0, 0, 0.06);
+        }
+    }
+
+    .form-control.active:hover {
+        border-color: #8fa4b8;
+    }
+
+    .form-control:focus{
+        &.readonly{
+            outline: none;
+        }
+    }
+
+    .form-control.readonly {
+        cursor: default;
+        background: rgb(228, 230, 231);
+        border-color: transparent;
+       // opacity: 0.5;
+    }
+
+}

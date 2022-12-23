@@ -1,0 +1,51 @@
+.swf-alert-group{
+
+  --taransformX: 0;
+  --taransformY: 0;
+  &.--fixed {
+    position: fixed;
+    z-index: 100;
+    animation-duration: 1s;
+    animation-name: slidein;
+
+    &.--vertical-top{
+      top: 1rem;
+
+      --start-taransformY: -50%;
+      --end-taransformY: 0;
+    }
+
+    &.--vertical-center{
+      top: 50%;
+      --start-taransformY: -100%;
+      --end-taransformY: -50%;
+    }
+    &.--vertical-bottom{
+      bottom: 1rem;
+      --start-taransformY: 50%;
+      --end-taransformY: 0%;
+    }
+
+    &.--horizontal-start{
+      left: 1rem;
+    }
+    &.--horizontal-center{
+      left: 50%;
+      --taransformX: -50%;
+    }
+    &.--horizontal-end{
+      right: 1rem;
+    }
+
+    @keyframes slidein {
+      from {
+        transform: translateX(var(--taransformX)) translateY(var(--start-taransformY));
+      }
+      to{
+        transform: translateX(var(--taransformX)) translateY(var(--end-taransformY));
+      }
+    }
+
+    transform: translateX(var(--taransformX)) translateY(var(--end-taransformY));
+  }
+}

@@ -1,0 +1,153 @@
+.swfTableResponsive {
+  //overflow-x: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100%;
+
+  .swfTableLoader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+}
+
+.swfTable {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #67748e;
+  vertical-align: top;
+  border-color: #e9ecef;
+
+  & > :not(:last-child) > :last-child > * {
+    border-bottom-color: #e9ecef;
+  }
+
+  & > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid #e9ecef;
+  }
+}
+
+.swfThead {
+  vertical-align: bottom;
+  &.--sticky {
+    position: sticky;
+    background: #fff;
+    top: var(--position);
+  }
+}
+
+.swfTBody {
+  .swfTr {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.swfTh {
+  padding: 0.75rem 1.5rem;
+  letter-spacing: 0;
+  border-bottom: 3px solid #e9ecef !important;
+  white-space: nowrap;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-weight: 700;
+  font-size: 0.65rem;
+  color: var(--swf-secondary);
+}
+
+.swfTd {
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  text-overflow: ellipsis;
+  max-width: 4rem;
+  overflow: hidden;
+}
+
+.swfPaginationContainer {
+  display: flex;
+  gap: 0.5rem;
+
+  .swfPagination {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    .swfMoreButton {
+      background: transparent;
+      border-color: transparent;
+      padding: 0;
+
+      &:focus,
+      &:hover {
+        background: transparent !important;
+        border-color: transparent !important;
+      }
+    }
+
+    .swfRoundedButton {
+      border-radius: 1.5rem;
+      padding: 0 0.5rem;
+      height: 1.5rem;
+      min-width: 1.5rem;
+      font-size: 0.7rem;
+    }
+  }
+
+  .swfPaginationDropdown {
+    width: fit-content;
+
+    .dropdown-button {
+      height: 1.5rem !important;
+    }
+  }
+}
+
+.swfPaginationContainer,
+.swfPagination {
+  &.--sticky {
+    position: sticky;
+    background: #fff;
+    padding: 0.1rem 0;
+    top: var(--positionTop);
+    bottom: var(--positionBottom)
+  }
+
+  &.start {
+    justify-content: flex-start;
+  }
+  &.center {
+    justify-content: center;
+  }
+  &.end {
+    justify-content: flex-end;
+  }
+  &.none {
+    display: none;
+  }
+
+  &.top {
+    top: 0
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+}

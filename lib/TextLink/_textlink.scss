@@ -1,0 +1,31 @@
+.swf-text-link{
+  text-decoration: none;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  &.primary{
+    color: rgb(30, 133, 109)
+  }
+
+  &.secondary{
+    color: rgb(15, 67, 55)
+  }
+
+  &.underline{
+    text-decoration: underline;
+  }
+
+}
+
+.swf-text-link:hover{
+  text-decoration: underline;
+
+  &.primary{
+    color: rgb(15, 67, 55)
+  }
+
+  &.secondary{
+    color: black;
+  }
+}

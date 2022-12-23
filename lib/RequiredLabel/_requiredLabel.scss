@@ -1,0 +1,17 @@
+.label-area {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: .9rem;
+  color: #5a6169;
+
+  .label-text{
+    padding-right: 2px;
+  }
+
+  .label-icon{
+    transform: translateY(-50%);
+  }
+
+  &.--invalid{
+    color: rgb(200,60,54);
+  }
+}
